@@ -52,7 +52,7 @@ public void setDirectorTecnico(String directorTecnico) {
     this.directorTecnico = directorTecnico;
 }
 
-@override
+@Override
 public String toString() {
     return "Nombre: " + nombre +
     " continente: " + continente + 
@@ -62,9 +62,9 @@ public String toString() {
     " director tecnico: " + directorTecnico;
 }
 
-public void ValidarCantidadJugadores() throws excepcion {
+public void ValidarCantidadJugadores() throws Excepcion {
     if (cantidadJugadores < 1 || cantidadJugadores > 26) {
-        throw new excepcion ("La cantidad de jugadores es incorrecta");
+        throw new Excepcion ("La cantidad de jugadores es incorrecta");
     }
 }
 
