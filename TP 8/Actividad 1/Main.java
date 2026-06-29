@@ -8,14 +8,34 @@ public class Main {
 
         Mundial mundial = new Mundial();
 
-        DirectorTecnico dt1 = new DirectorTecnico("Lionel Scaloni", 48, "Argentina");
+        DirectorTecnico dt1 = new DirectorTecnico("Lionel Scaloni", 47, "Argentina");
         DirectorTecnico dt2 = new DirectorTecnico("Didier Deschamps", 56, "Francia");
 
         try {
 
-            Seleccion argentina = new Seleccion("Argentina", "America", 6, 26, "Clasificada", dt1);
-            Seleccion francia = new Seleccion("Francia", "Europa", 4, 24, "Clasificada", dt2);
-            Seleccion brasil = new Seleccion("Brasil", "America", 3, 10, "En competencia", null);
+            Seleccion argentina = new Seleccion(
+                    "Argentina",
+                    "America",
+                    6,
+                    26,
+                    "Clasificada",
+                    dt1);
+
+            Seleccion francia = new Seleccion(
+                    "Francia",
+                    "Europa",
+                    4,
+                    24,
+                    "Clasificada",
+                    dt2);
+
+            Seleccion brasil = new Seleccion(
+                    "Brasil",
+                    "America",
+                    3,
+                    10,
+                    "En competencia",
+                    null);
 
             mundial.agregarSeleccion(argentina);
             mundial.agregarSeleccion(francia);
@@ -28,15 +48,15 @@ public class Main {
         }
 
         System.out.println("----- CONSIGNA 1 -----");
-        System.out.print("Ingrese una posicion del ArrayList: ");
+        System.out.print("Ingrese una posicion: ");
         int posicion = teclado.nextInt();
 
         mundial.consultarSeleccion(posicion);
 
         teclado.nextLine();
 
-        System.out.println("----- CONSIGNA 2 -----");
-        System.out.print("Ingrese la posicion de la seleccion: ");
+        System.out.println("\n----- CONSIGNA 2 -----");
+        System.out.print("Ingrese la posicion: ");
         int pos = teclado.nextInt();
 
         teclado.nextLine();
@@ -46,23 +66,33 @@ public class Main {
 
         mundial.actualizarPuntos(pos, puntos);
 
-        System.out.println("----- CONSIGNA 3 -----");
-        System.out.print("Ingrese la posicion para ver el Director Tecnico: ");
+        System.out.println("\n----- CONSIGNA 3 -----");
+        System.out.print("Ingrese una posicion: ");
         int posDT = teclado.nextInt();
 
         mundial.mostrarDirectorTecnico(posDT);
 
-        System.out.println("----- CONSIGNA 5 -----");
+        System.out.println("\n----- CONSIGNA 5 -----");
 
         try {
 
-            Seleccion brasil = new Seleccion("Brasil", "America", 3, 10, "En competencia", null);
+            Seleccion brasil = new Seleccion(
+                    "Brasil",
+                    "America",
+                    3,
+                    10,
+                    "En competencia",
+                    null);
 
             brasil.disputarPartido();
 
         } catch (JugadoresInsuficientesException e) {
 
             System.out.println(e.getMessage());
+
+        } finally {
+
+            System.out.println("Operacion finalizada.");
 
         }
 

@@ -16,11 +16,17 @@ public class Mundial {
     public void consultarSeleccion(int posicion) {
 
         try {
+
             System.out.println(selecciones.get(posicion));
+
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("Error: esa posicion no existe.");
+
+            System.out.println("Error: la posicion ingresada no existe.");
+
         } finally {
-            System.out.println("Consulta finalizada.\n");
+
+            System.out.println("Consulta finalizada.");
+
         }
 
     }
@@ -31,21 +37,22 @@ public class Mundial {
         try {
 
             int puntos = Integer.parseInt(puntosIngresados);
+
             selecciones.get(posicion).setPuntos(puntos);
 
             System.out.println("Puntos actualizados correctamente.");
 
         } catch (NumberFormatException e) {
 
-            System.out.println("Error: debe ingresar un numero.");
+            System.out.println("Error: los puntos deben ser un numero.");
 
         } catch (IndexOutOfBoundsException e) {
 
-            System.out.println("Error: la seleccion no existe.");
+            System.out.println("Error: la posicion no existe.");
 
         } finally {
 
-            System.out.println("Actualizacion finalizada.\n");
+            System.out.println("Actualizacion finalizada.");
 
         }
 
@@ -56,7 +63,7 @@ public class Mundial {
 
         try {
 
-            String dt = selecciones.get(posicion).getDirectorTecnico();
+            DirectorTecnico dt = selecciones.get(posicion).getDirectorTecnico();
 
             System.out.println(dt.toString());
 
@@ -70,7 +77,7 @@ public class Mundial {
 
         } finally {
 
-            System.out.println("Consulta del DT finalizada.\n");
+            System.out.println("Consulta finalizada.");
 
         }
 
